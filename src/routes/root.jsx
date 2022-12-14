@@ -1,24 +1,24 @@
-import { Link } from "react-router-dom";
+import React from "react";
+import { createBrowserRouter } from "react-router-dom";
 
-export default function Root() {
-  return (
-    <>
-      <h2>選んでみてください</h2>
-      <button>
-        <Link to={`/how-to-use`}>はじめましての方</Link>
-      </button>
-      <button>
-        <Link to={`/self-monitoring`}>セルフモニタリング
-          <span>まずはここから</span>
-        </Link>
-      </button>
-      <h2>認知を振り返ってみる (手法)</h2>
-      <button>
-        <Link to={`/column-technique`}>コラム法</Link>
-      </button>
-      <button>
-        <Link to={`/the-work-of-byron-katie`}>バイロン・ケイティのワーク</Link>
-      </button>
-    </>
-  )
-}
+// react element
+import Root from "../pages";
+// routers
+import how_to_use_router from "./howToUse";
+import self_monitoring_router from "./selfMonitoring";
+import the_work_of_byron_katie_router from "./theWorkOfByronKatie";
+import column_technique_router from "./columnTechnique";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <p>not found page</p>,
+  },
+  how_to_use_router,
+  self_monitoring_router,
+  column_technique_router,
+  the_work_of_byron_katie_router,
+]);
+
+export default router;

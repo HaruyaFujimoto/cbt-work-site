@@ -1,11 +1,16 @@
-import Template from "../templates/template";
+import React from "react";
 
-export default function HowToUse() {
-  return (
-    <>
-      <Template>
-        <h2>使い方</h2>
-      </Template>
-    </>
-  )
-}
+import HowToUse from "../pages/howToUse";
+
+const how_to_use_router = {
+  path: "how-to-use",
+  element: <HowToUse />,
+  children: [
+    {
+      path: "step1",
+      element: <HowToUse />
+    }
+  ]
+};
+
+export default how_to_use_router;

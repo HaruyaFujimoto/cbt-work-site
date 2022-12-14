@@ -1,11 +1,16 @@
-import Template from "../templates/template";
+import React from "react";
 
-export default function SelfMonitoring() {
-  return (
-    <>
-      <Template>
-        <h2>セルフモニタリング</h2>
-      </Template>
-    </>
-  )
-}
+import SelfMonitoring from "../pages/selfMonitoring";
+
+const self_monitoring_router = {
+  path: "self-monitoring",
+  element: <SelfMonitoring />,
+  children: [
+    {
+      path: "step1",
+      element: <SelfMonitoring />
+    }
+  ]
+};
+
+export default self_monitoring_router;

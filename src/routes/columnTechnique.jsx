@@ -1,11 +1,16 @@
-import Template from "../templates/template";
+import React from "react";
 
-export default function ColumnTechnique() {
-  return (
-    <>
-      <Template>
-        <h2>コラム法</h2>
-      </Template>
-    </>
-  );
-}
+import ColumnTechnique from "../pages/columnTechnique";
+
+const column_technique_router = {
+  path: "column-technique",
+  element: <ColumnTechnique />,
+  children: [
+    {
+      path: "step1",
+      element: <ColumnTechnique />
+    }
+  ]
+};
+
+export default column_technique_router;
